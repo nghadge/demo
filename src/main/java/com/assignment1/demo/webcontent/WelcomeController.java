@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class WelcomeController {
 
-    @Value("${userBucket.path}")
-    private String userBucketPath;
+    @Value("${serverName}")
+    private String serverName;
 
     @RequestMapping("/hello")
     public String hello(Model model) {
-        model.addAttribute("name", userBucketPath);
+        model.addAttribute("name", serverName);
         return "hello";
     }
 }
